@@ -14,11 +14,8 @@ export function Header() {
           <Link href="#pricing" className="text-muted hover:text-foreground transition">
             Pricing
           </Link>
-          <Link href="/login" className="text-muted hover:text-foreground transition">
-            Log in
-          </Link>
           <Link
-            href="/signup"
+            href="/dashboard"
             className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition hover:bg-accent-dark"
           >
             Get Started

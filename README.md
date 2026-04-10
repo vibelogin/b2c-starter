@@ -1,12 +1,10 @@
-# B2C SaaS Starter
+# B2C Starter
 
-A clean Next.js 15 SaaS starter template with landing page, dashboard, and settings. Ready to add authentication.
+A clean Next.js 15 app starter with landing page and dashboard. No authentication — add your own.
 
 ## Pages
 
 - `/` — Landing page with hero, features, pricing, and CTA
-- `/login` — Login page (placeholder form)
-- `/signup` — Signup page (placeholder form)
 - `/dashboard` — Dashboard with stats and project list
 - `/dashboard/settings` — Account settings (profile, plan, danger zone)
 
@@ -32,8 +30,6 @@ Open [http://localhost:3000](http://localhost:3000).
 src/
   app/
     page.tsx                    # Landing page
-    login/page.tsx              # Login
-    signup/page.tsx             # Signup
     dashboard/
       layout.tsx                # Dashboard shell (sidebar + topbar)
       page.tsx                  # Dashboard home
@@ -45,8 +41,8 @@ src/
 
 ## Adding Authentication
 
-The login and signup pages have placeholder forms. The dashboard has hardcoded user data. These are marked with `TODO` comments for easy replacement with a real auth provider.
+This starter has no authentication. The dashboard is unprotected and uses hardcoded user data. Add an auth provider to protect the dashboard routes and display real user info.
 
 ## Deploy
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vibelogin/b2c-saas-starter)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vibelogin/b2c-starter)

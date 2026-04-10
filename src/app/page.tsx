@@ -21,7 +21,7 @@ export default function HomePage() {
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
-              href="/signup"
+              href="/dashboard"
               className="rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent-dark"
             >
               Start Free Trial
@@ -192,7 +192,7 @@ export default function HomePage() {
                     ))}
                   </ul>
                   <Link
-                    href="/signup"
+                    href="/dashboard"
                     className={`mt-8 block rounded-lg py-2.5 text-center text-sm font-medium transition ${
                       plan.highlighted
                         ? "bg-accent text-white hover:bg-accent-dark"
@@ -215,7 +215,7 @@ export default function HomePage() {
               Join thousands of teams shipping faster with Acme.
             </p>
             <Link
-              href="/signup"
+              href="/dashboard"
               className="mt-6 inline-block rounded-lg bg-accent px-8 py-3 text-sm font-semibold text-white transition hover:bg-accent-dark"
             >
               Start Free Trial

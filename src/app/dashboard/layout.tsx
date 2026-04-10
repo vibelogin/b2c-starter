@@ -50,11 +50,7 @@ export default function DashboardLayout({
         <header className="flex h-14 items-center justify-between border-b border-border px-6">
           <h2 className="text-sm font-medium text-muted">Dashboard</h2>
           <div className="flex items-center gap-4">
-            {/* TODO: Replace with real user info from VibeLogin session */}
             <span className="text-sm text-muted">user@example.com</span>
-            <button className="text-sm text-muted hover:text-foreground transition">
-              Log out
-            </button>
           </div>
         </header>
 

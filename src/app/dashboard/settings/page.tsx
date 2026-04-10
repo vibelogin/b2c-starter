@@ -10,7 +10,7 @@ export default function SettingsPage() {
       <section className="mt-8">
         <h2 className="text-lg font-semibold">Profile</h2>
         <div className="mt-4 rounded-xl border border-border bg-surface p-6 space-y-4">
-          {/* TODO: Populate with real user data from VibeLogin session */}
+          {/* Profile fields */}
           <div>
             <label className="block text-sm font-medium mb-1">Name</label>
             <input
