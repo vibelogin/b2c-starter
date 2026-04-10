@@ -4,7 +4,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-8">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-sm text-muted">
-            &copy; {new Date().getFullYear()} Acme Inc. All rights reserved.
+            &copy; {new Date().getFullYear()} CashFlow. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-muted">
             <a href="#" className="hover:text-foreground transition">Privacy</a>

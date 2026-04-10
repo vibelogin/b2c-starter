@@ -1,18 +1,25 @@
 export default function DashboardPage() {
   return (
     <div>
-      <h1 className="text-2xl font-bold">Welcome back</h1>
-      <p className="mt-1 text-sm text-muted">
-        Here&apos;s what&apos;s happening with your projects.
-      </p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-2xl font-bold">Overview</h1>
+          <p className="mt-1 text-sm text-muted">
+            Your spending this month at a glance.
+          </p>
+        </div>
+        <button className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition hover:bg-accent-dark">
+          + Add Expense
+        </button>
+      </div>
 
       {/* Stats */}
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {[
-          { label: "Total Projects", value: "12", change: "+2 this month" },
-          { label: "Active Tasks", value: "48", change: "6 due today" },
-          { label: "Team Members", value: "8", change: "+1 this week" },
-          { label: "Completion Rate", value: "87%", change: "+4% vs last month" },
+          { label: "Spent This Month", value: "$2,340", change: "+12% vs last month", negative: true },
+          { label: "Budget Remaining", value: "$660", change: "$3,000 budget", negative: false },
+          { label: "Transactions", value: "47", change: "+8 this week", negative: false },
+          { label: "Largest Expense", value: "$520", change: "Rent — Apr 1", negative: false },
         ].map((stat) => (
           <div
             key={stat.label}
@@ -22,51 +29,88 @@ export default function DashboardPage() {
               {stat.label}
             </p>
             <p className="mt-2 text-2xl font-bold">{stat.value}</p>
-            <p className="mt-1 text-xs text-muted">{stat.change}</p>
+            <p className={`mt-1 text-xs ${stat.negative ? "text-danger" : "text-muted"}`}>{stat.change}</p>
           </div>
         ))}
       </div>
 
-      {/* Recent projects */}
+      {/* Budget progress */}
       <div className="mt-8">
-        <h2 className="text-lg font-semibold">Recent Projects</h2>
+        <h2 className="text-lg font-semibold">Budget Progress</h2>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          {[
+            { category: "Groceries", spent: 420, budget: 500, color: "bg-accent" },
+            { category: "Dining Out", spent: 280, budget: 200, color: "bg-danger" },
+            { category: "Transport", spent: 95, budget: 150, color: "bg-accent" },
+            { category: "Entertainment", spent: 120, budget: 100, color: "bg-warning" },
+          ].map((item) => {
+            const pct = Math.min((item.spent / item.budget) * 100, 100);
+            const over = item.spent > item.budget;
+            return (
+              <div key={item.category} className="rounded-xl border border-border bg-surface p-4">
+                <div className="flex items-center justify-between text-sm">
+                  <span className="font-medium">{item.category}</span>
+                  <span className={over ? "text-danger font-medium" : "text-muted"}>
+                    ${item.spent} / ${item.budget}
+                  </span>
+                </div>
+                <div className="mt-2 h-2 rounded-full bg-border">
+                  <div
+                    className={`h-2 rounded-full transition-all ${over ? "bg-danger" : item.color}`}
+                    style={{ width: `${pct}%` }}
+                  />
+                </div>
+                {over && (
+                  <p className="mt-1 text-xs text-danger">
+                    ${item.spent - item.budget} over budget
+                  </p>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Recent transactions */}
+      <div className="mt-8">
+        <h2 className="text-lg font-semibold">Recent Transactions</h2>
         <div className="mt-4 rounded-xl border border-border overflow-hidden">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border bg-surface">
-                <th className="px-4 py-3 text-left font-medium text-muted">Project</th>
-                <th className="px-4 py-3 text-left font-medium text-muted">Status</th>
-                <th className="px-4 py-3 text-left font-medium text-muted">Tasks</th>
-                <th className="px-4 py-3 text-left font-medium text-muted">Updated</th>
+                <th className="px-4 py-3 text-left font-medium text-muted">Description</th>
+                <th className="px-4 py-3 text-left font-medium text-muted">Category</th>
+                <th className="px-4 py-3 text-left font-medium text-muted">Date</th>
+                <th className="px-4 py-3 text-right font-medium text-muted">Amount</th>
               </tr>
             </thead>
             <tbody>
               {[
-                { name: "Website Redesign", status: "In Progress", tasks: "12/18", updated: "2 hours ago" },
-                { name: "Mobile App v2", status: "Planning", tasks: "0/24", updated: "1 day ago" },
-                { name: "API Integration", status: "In Review", tasks: "8/10", updated: "3 hours ago" },
-                { name: "Marketing Campaign", status: "Completed", tasks: "15/15", updated: "5 days ago" },
-                { name: "Database Migration", status: "In Progress", tasks: "5/8", updated: "1 hour ago" },
-              ].map((project) => (
-                <tr key={project.name} className="border-b border-border last:border-0">
-                  <td className="px-4 py-3 font-medium">{project.name}</td>
+                { desc: "Whole Foods Market", category: "Groceries", date: "Today", amount: -64.23 },
+                { desc: "Uber ride", category: "Transport", date: "Today", amount: -18.50 },
+                { desc: "Netflix", category: "Entertainment", date: "Yesterday", amount: -15.99 },
+                { desc: "Salary deposit", category: "Income", date: "Apr 1", amount: 4200.00 },
+                { desc: "Sushi dinner", category: "Dining Out", date: "Mar 30", amount: -52.00 },
+                { desc: "Gym membership", category: "Health", date: "Mar 28", amount: -49.99 },
+                { desc: "Coffee shop", category: "Dining Out", date: "Mar 28", amount: -6.75 },
+              ].map((tx) => (
+                <tr key={`${tx.desc}-${tx.date}`} className="border-b border-border last:border-0">
+                  <td className="px-4 py-3 font-medium">{tx.desc}</td>
                   <td className="px-4 py-3">
-                    <span
-                      className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${
-                        project.status === "Completed"
-                          ? "bg-success/10 text-success"
-                          : project.status === "In Progress"
-                          ? "bg-accent/10 text-accent"
-                          : project.status === "In Review"
-                          ? "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400"
-                          : "bg-muted/10 text-muted"
-                      }`}
-                    >
-                      {project.status}
+                    <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${
+                      tx.category === "Income"
+                        ? "bg-success/10 text-success"
+                        : "bg-accent/10 text-accent"
+                    }`}>
+                      {tx.category}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-muted">{project.tasks}</td>
-                  <td className="px-4 py-3 text-muted">{project.updated}</td>
+                  <td className="px-4 py-3 text-muted">{tx.date}</td>
+                  <td className={`px-4 py-3 text-right font-medium ${
+                    tx.amount > 0 ? "text-success" : ""
+                  }`}>
+                    {tx.amount > 0 ? "+" : ""}${Math.abs(tx.amount).toFixed(2)}
+                  </td>
                 </tr>
               ))}
             </tbody>

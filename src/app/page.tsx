@@ -11,30 +11,30 @@ export default function HomePage() {
         {/* Hero */}
         <section className="mx-auto max-w-4xl px-6 py-20 text-center md:py-32">
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-            Build faster.
+            Know where your
             <br />
-            <span className="text-accent">Ship smarter.</span>
+            <span className="text-accent">money goes.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted">
-            Acme helps teams manage projects, track progress, and ship products
-            on time. The all-in-one productivity platform for modern teams.
+            Track every expense, set monthly budgets, and finally understand
+            your spending habits. Simple, private, and free.
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
               href="/dashboard"
               className="rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent-dark"
             >
-              Start Free Trial
+              Start Tracking Free
             </Link>
             <Link
               href="#features"
               className="rounded-lg border border-border px-6 py-3 text-sm font-semibold transition hover:bg-surface-hover"
             >
-              See Features
+              See How It Works
             </Link>
           </div>
           <p className="mt-4 text-xs text-muted">
-            No credit card required. Free for up to 3 projects.
+            Free forever. No credit card required.
           </p>
         </section>
 
@@ -42,42 +42,42 @@ export default function HomePage() {
         <section id="features" className="border-t border-border bg-surface py-20">
           <div className="mx-auto max-w-6xl px-6">
             <h2 className="text-center text-2xl font-bold md:text-3xl">
-              Everything you need to ship
+              Take control of your finances
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-center text-muted">
-              Simple tools that get out of your way and let you focus on what matters.
+              No spreadsheets, no complexity. Just a clear picture of your money.
             </p>
             <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 {
-                  title: "Project Boards",
-                  desc: "Kanban boards with drag-and-drop. Track tasks from idea to done.",
-                  icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2",
+                  title: "Quick Entry",
+                  desc: "Add an expense in seconds. Just tap, type the amount, pick a category, done.",
+                  icon: "M12 4v16m8-8H4",
                 },
                 {
-                  title: "Team Chat",
-                  desc: "Real-time messaging with threads, reactions, and file sharing.",
-                  icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z",
-                },
-                {
-                  title: "Analytics",
-                  desc: "Track velocity, burndown, and team performance in real time.",
+                  title: "Monthly Budgets",
+                  desc: "Set spending limits for each category. Get notified before you go over.",
                   icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
                 },
                 {
-                  title: "File Storage",
-                  desc: "Upload, organize, and share files with your team. 10 GB included.",
-                  icon: "M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z",
+                  title: "Spending Insights",
+                  desc: "See where your money goes each month with clear breakdowns by category.",
+                  icon: "M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z",
                 },
                 {
-                  title: "Integrations",
-                  desc: "Connect with GitHub, Slack, Figma, and 50+ other tools.",
-                  icon: "M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1",
+                  title: "Recurring Expenses",
+                  desc: "Track subscriptions and bills automatically. Know your fixed costs at a glance.",
+                  icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
                 },
                 {
-                  title: "API Access",
-                  desc: "REST API with webhooks. Build custom workflows and automations.",
-                  icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
+                  title: "Multi-Currency",
+                  desc: "Travel or earn in different currencies? Track everything in one place with auto-conversion.",
+                  icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+                },
+                {
+                  title: "Private & Secure",
+                  desc: "Your financial data stays on your account. We never sell your data or show you ads.",
+                  icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
                 },
               ].map((feature) => (
                 <div
@@ -111,50 +111,35 @@ export default function HomePage() {
         <section id="pricing" className="py-20">
           <div className="mx-auto max-w-5xl px-6">
             <h2 className="text-center text-2xl font-bold md:text-3xl">
-              Simple, transparent pricing
+              Simple pricing
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-center text-muted">
               Start free. Upgrade when you need more.
             </p>
-            <div className="mt-12 grid gap-8 sm:grid-cols-3">
+            <div className="mt-12 grid gap-8 sm:grid-cols-2 max-w-3xl mx-auto">
               {[
                 {
                   name: "Free",
                   price: "$0",
-                  desc: "For individuals and side projects",
-                  features: ["3 projects", "1 team member", "1 GB storage", "Community support"],
+                  desc: "For getting started",
+                  features: ["100 transactions/month", "3 budget categories", "Monthly summary", "1 currency", "CSV export"],
                   cta: "Get Started",
                   highlighted: false,
                 },
                 {
-                  name: "Pro",
-                  price: "$12",
-                  desc: "For growing teams",
+                  name: "Premium",
+                  price: "$5",
+                  desc: "For serious budgeters",
                   features: [
-                    "Unlimited projects",
-                    "Up to 10 members",
-                    "10 GB storage",
+                    "Unlimited transactions",
+                    "Unlimited categories",
+                    "Spending insights & trends",
+                    "Multi-currency support",
+                    "Recurring expense tracking",
                     "Priority support",
-                    "Analytics dashboard",
-                    "API access",
                   ],
                   cta: "Start Free Trial",
                   highlighted: true,
-                },
-                {
-                  name: "Team",
-                  price: "$39",
-                  desc: "For larger organizations",
-                  features: [
-                    "Everything in Pro",
-                    "Unlimited members",
-                    "100 GB storage",
-                    "SSO & SAML",
-                    "Audit logs",
-                    "Dedicated support",
-                  ],
-                  cta: "Contact Sales",
-                  highlighted: false,
                 },
               ].map((plan) => (
                 <div
@@ -169,7 +154,7 @@ export default function HomePage() {
                   <div className="mt-2">
                     <span className="text-3xl font-bold">{plan.price}</span>
                     {plan.price !== "$0" && (
-                      <span className="text-sm text-muted">/mo per member</span>
+                      <span className="text-sm text-muted">/month</span>
                     )}
                   </div>
                   <p className="mt-2 text-sm text-muted">{plan.desc}</p>
@@ -210,15 +195,15 @@ export default function HomePage() {
         {/* CTA */}
         <section className="border-t border-border bg-surface py-20">
           <div className="mx-auto max-w-2xl px-6 text-center">
-            <h2 className="text-2xl font-bold md:text-3xl">Ready to get started?</h2>
+            <h2 className="text-2xl font-bold md:text-3xl">Ready to take control?</h2>
             <p className="mt-3 text-muted">
-              Join thousands of teams shipping faster with Acme.
+              Join thousands of people who finally understand where their money goes.
             </p>
             <Link
               href="/dashboard"
               className="mt-6 inline-block rounded-lg bg-accent px-8 py-3 text-sm font-semibold text-white transition hover:bg-accent-dark"
             >
-              Start Free Trial
+              Create Your Free Account
             </Link>
           </div>
         </section>
